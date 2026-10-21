@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+
+    <style>
+        /* Mengatur tampilan seluruh halaman */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #F4F7F4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* BAGIAN HEADER: FOTO DAN NAMA */
+        header {
+            background: #87A987;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .profil {
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .profil img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #D8E2DC;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        /* MENGATUR KONTEN UTAMA */
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #87A987;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #557A55;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #E2EBE2;
+        }
+
+        /* BAGIAN SKILL */
+        .skill {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill span {
+            background: #E8EFE8;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* FOTO PROYEK */
+        .proyek img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        /* BAGIAN KONTAK */
+        a {
+            color: #557A55;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* BAGIAN BAWAH HALAMAN */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+
+        /* TAMPILAN DI HP */
+        @media (max-width: 600px) {
+            .profil {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profil img {
+                width: 120px;
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. FOTO DAN NAMA -->
+    <header>
+        <div class="profil">
+            <img src="foto-profil.jpg" alt="Foto Saya">
+
+            <div>
+                <h1>Chita Ovita</h1>
+                <p>Mahasiswa Teknologi Rekayasa Elektro UGM</p>
+                <p>Tertarik pada teknologi energi terbarukan dan ketenagalistrikan</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 2. TENTANG SAYA -->
+        <section>
+            <h2>Tentang Saya</h2>
+            <p>
+                Saya adalah mahasiswa Teknologi Rekayasa Elektro
+                di Universitas Gadjah Mada. Saya tertarik pada teknologi energi terbarukan dan ketenagalistrikan.
+            </p>
+        </section>
+
+        <!-- 3. PENDIDIKAN -->
+        <section>
+            <h2>Pendidikan</h2>
+
+            <p><b>Universitas Gadjah Mada</b></p>
+            <p>Teknologi Rekayasa Elektro</p>
+            <p>2026 - 2030</p>
+
+            <br>
+
+            <p><b>SMA Negeri 1 Karanganyar</b></p>
+            <p>Ilmu Pengetahuan Alam dan Ekonomi (Kurikulum Merdeka)</p>
+            <p>2023 - 2026</p>
+        </section>
+
+        <!-- 4. SKILL -->
+        <section>
+            <h2>Skill / Kemampuan</h2>
+
+            <p><b>Hard Skill</b></p>
+            <div class="skill">
+                <span>Arduino</span>
+                <span>Python</span>
+                <span>MATLAB</span>
+                <span>AutoCAD Electrical</span>
+                <span>Mikrokontroler</span>
+            </div>
+
+            <br>
+
+            <p><b>Soft Skill</b></p>
+            <div class="skill">
+                <span>Kepemimpinan</span>
+                <span>Koordinasi Tim</span>
+                <span>Manajemen Acara </span>
+                <span>Negosiasi & Persuasi</span>
+                <span>Manajemen Waktu</span>
+            </div>
+        </section>
+
+        <!-- 5. PROYEK -->
+        <section>
+            <h2>Proyek / Pengalaman</h2>
+
+            <div class="proyek">
+                <img src="proyek1.jpg" alt="Foto Proyek">
+
+                <p><b>Sistem Kendali Berbasis Arduino</b></p>
+                <p>
+                    Membuat simulasi pengaturan motor DC
+                    menggunakan Arduino Uno.
+                </p>
+            </div>
+
+            <br>
+
+            <p><b>Proyek atau Pengalaman Lain</b></p>
+            <p>
+                Tuliskan pengalaman, pelatihan, atau proyek
+                yang pernah kamu kerjakan di sini.
+            </p>
+        </section>
+
+        <!-- 6. KONTAK -->
+        <section>
+            <h2>Kontak</h2>
+
+            <p>Email:
+                <a href="mailto:emailanda@mail.ugm.ac.id">
+                    chitaovita@mail.ugm.ac.id
+                </a>
+            </p>
+
+            <p>LinkedIn:
+                <a href="https://www.linkedin.com/in/chita-ovita-0a6409437" target="_blank">
+                    Profil LinkedIn
+                </a>
+            </p>
+
+            <p>Instagram:
+                <a href="https://instagram.com" target="_blank">
+                    @ovitachita
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer>
+        <p>&copy; 2026 Nama Lengkap Anda</p>
+    </footer>
+
+</body>
+</html>
