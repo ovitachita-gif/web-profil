@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
+    <title>Portofolio Saya | Chita Ovita</title>
 
     <style>
-        /* Mengatur tampilan seluruh halaman */
+        /* PENGATURAN DASAR */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -15,83 +15,276 @@
             font-family: Arial, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
         body {
             background: #F4F7F4;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* BAGIAN HEADER: FOTO DAN NAMA */
+        /* HEADER: FOTO DAN NAMA */
         header {
-            background: #87A987;
+            background: linear-gradient(135deg, #87A987, #557A55);
             color: white;
-            padding: 30px 20px;
+            padding: 45px 20px;
         }
 
         .profil {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 30px;
         }
 
         .profil img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #D8E2DC;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .profil img:hover {
+            transform: scale(1.05);
         }
 
         h1 {
-            font-size: 30px;
+            font-size: 32px;
+            margin-bottom: 5px;
         }
 
-        /* MENGATUR KONTEN UTAMA */
+        .profil p {
+            margin-top: 4px;
+        }
+
+        /* NAVIGASI KATA KUNCI */
+        nav {
+            background: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid #E2EBE2;
+        }
+
+        .menu {
+            max-width: 1000px;
+            margin: auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .menu a {
+            color: #557A55;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 8px 13px;
+            border-radius: 20px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .menu a:hover,
+        .menu a:focus-visible {
+            background: #557A55;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* KONTEN UTAMA */
         main {
-            max-width: 800px;
-            margin: 30px auto;
+            max-width: 900px;
+            margin: 35px auto;
             padding: 0 20px;
         }
 
         section {
             background: white;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 28px;
+            margin-bottom: 25px;
             border-left: 5px solid #87A987;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(65, 95, 65, 0.06);
+            scroll-margin-top: 90px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            box-shadow: 0 7px 22px rgba(65, 95, 65, 0.12);
         }
 
         h2 {
             color: #557A55;
-            margin-bottom: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
             border-bottom: 2px solid #E2EBE2;
+            font-size: 23px;
         }
 
-        /* BAGIAN SKILL */
+        h3 {
+            color: #557A55;
+            margin-bottom: 5px;
+        }
+
+        section p {
+            margin-bottom: 7px;
+        }
+
+        /* PENDIDIKAN */
+        .pendidikan-item {
+            padding: 15px 18px;
+            margin-bottom: 15px;
+            background: #F6F9F5;
+            border-radius: 8px;
+            border-left: 3px solid #87A987;
+        }
+
+        .pendidikan-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .institusi {
+            font-size: 18px;
+            color: #355B3A;
+        }
+
+        .subjudul-pendidikan {
+            color: #557A55;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .tahun {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* SKILL */
         .skill {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .skill span {
             background: #E8EFE8;
-            padding: 5px 10px;
-            border-radius: 5px;
+            color: #355B3A;
+            padding: 7px 13px;
+            border-radius: 7px;
+            border: 1px solid #D8E2D8;
+            font-size: 14px;
+            transition: all 0.3s ease;
         }
 
-        /* FOTO PROYEK */
+        .skill span:hover {
+            background: #557A55;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ORGANISASI DAN PROYEK */
+        .proyek {
+            margin-bottom: 20px;
+        }
+
         .proyek img {
             width: 100%;
-            max-height: 250px;
+            max-height: 300px;
             object-fit: cover;
-            border-radius: 5px;
+            border-radius: 8px;
             margin: 10px 0;
+            background: #E8EFE8;
+            transition: transform 0.3s ease;
         }
 
-        /* BAGIAN KONTAK */
+        .proyek img:hover {
+            transform: scale(1.01);
+        }
+
+        .judul-proyek {
+            color: #355B3A;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .pemisah {
+            border: none;
+            border-top: 1px solid #E2EBE2;
+            margin: 25px 0;
+        }
+
+        /* KARTU PROYEK TAMBAHAN */
+        .daftar-proyek {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .kartu-proyek {
+            border: 1px solid #DDE7DD;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #FAFCF9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .kartu-proyek:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(65, 95, 65, 0.12);
+        }
+
+        .kartu-proyek img {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #E8EFE8;
+        }
+
+        .isi-kartu {
+            padding: 16px;
+        }
+
+        .isi-kartu h3 {
+            font-size: 16px;
+        }
+
+        .isi-kartu p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .label-proyek {
+            display: inline-block;
+            color: #557A55;
+            background: #E8EFE8;
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        /* KONTAK */
+        #kontak p {
+            margin-bottom: 12px;
+        }
+
         a {
             color: #557A55;
             text-decoration: none;
@@ -101,33 +294,112 @@
             text-decoration: underline;
         }
 
-        /* BAGIAN BAWAH HALAMAN */
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
+        #kontak a {
+            font-weight: bold;
+            overflow-wrap: anywhere;
         }
 
-        /* TAMPILAN DI HP */
+        /* TOMBOL KEMBALI KE ATAS */
+        .kembali-atas {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background: #557A55;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .kembali-atas:hover {
+            background: #355B3A;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            color: #777;
+            background: #E8EFE8;
+            font-size: 14px;
+        }
+
+        /* TAMPILAN TABLET DAN HP */
         @media (max-width: 600px) {
+            header {
+                padding: 35px 20px;
+            }
+
             .profil {
                 flex-direction: column;
                 text-align: center;
+                gap: 18px;
             }
 
             .profil img {
-                width: 120px;
-                height: 120px;
+                width: 125px;
+                height: 125px;
             }
 
             h1 {
-                font-size: 25px;
+                font-size: 27px;
+            }
+
+            .menu {
+                justify-content: flex-start;
+                gap: 5px;
+                padding: 10px;
+            }
+
+            .menu a {
+                font-size: 13px;
+                padding: 8px 11px;
+            }
+
+            main {
+                margin: 22px auto;
+                padding: 0 13px;
+            }
+
+            section {
+                padding: 20px;
+                margin-bottom: 18px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+
+            .daftar-proyek {
+                grid-template-columns: 1fr;
+            }
+
+            .kartu-proyek img {
+                height: 200px;
+            }
+        }
+
+        /* MENGHORMATI PENGATURAN ANIMASI PENGGUNA */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 
-<body>
+<body id="beranda">
 
     <!-- 1. FOTO DAN NAMA -->
     <header>
@@ -142,39 +414,57 @@
         </div>
     </header>
 
+    <!-- NAVIGASI KATA KUNCI: KLIK UNTUK MENUJU BAGIAN -->
+    <nav aria-label="Navigasi utama">
+        <div class="menu">
+            <a href="#tentang">Tentang Saya</a>
+            <a href="#pendidikan">Pendidikan</a>
+            <a href="#skill">Skill</a>
+            <a href="#organisasi">Organisasi</a>
+            <a href="#proyek">Proyek</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+    </nav>
+
     <main>
 
         <!-- 2. TENTANG SAYA -->
-        <section>
+        <section id="tentang">
             <h2>Tentang Saya</h2>
             <p>
-                Saat ini, saya sedang menempuh pendidikan di program studi Teknologi Rekayasa Elektro Universitas Gadjah Mada. Saya memiliki ketertarikan yang besar pada bidang teknologi energi terbarukan dan ketenagalistrikan. Untuk membangun fondasi di bidang tersebut, semester ini saya sedang fokus mempelajari rangkaian listrik dasar, elektronika dasar, pengukuran listrik, serta pemrograman dasar. Melalui bekal ilmu ini, saya ingin berkontribusi dalam mempercepat transisi energi bersih di Indonesia.
+                Saya sedang menempuh pendidikan di program studi Teknologi Rekayasa Elektro Universitas Gadjah Mada. Saya berasal dari Kota Karanganyar, Jawa Tengah, dan saat ini berdomisili di Yogyakarta. Saya memiliki ketertarikan yang besar pada bidang teknologi energi terbarukan dan ketenagalistrikan. Untuk membangun fondasi di bidang tersebut, semester ini saya sedang fokus mempelajari rangkaian listrik dasar, elektronika dasar, pengukuran listrik, serta pemrograman dasar. Melalui bekal ilmu ini, saya ingin berkontribusi dalam mempercepat transisi energi bersih di Indonesia.
+            </p>
         </section>
 
         <!-- 3. PENDIDIKAN -->
-        <section>
+        <section id="pendidikan">
             <h2>Pendidikan</h2>
 
-            <p><b>Universitas Gadjah Mada</b></p>
-            <p>Teknologi Rekayasa Elektro</p>
-            <p>2026 - sekarang</p>
+            <div class="pendidikan-item">
+                <p class="institusi"><b>Universitas Gadjah Mada</b></p>
+                <p class="subjudul-pendidikan">Sekolah Vokasi</p>
+                <p class="subjudul-pendidikan">Departemen Teknik Elektro dan Informatika</p>
+                <p>Teknologi Rekayasa Elektro</p>
+                <p class="tahun">2026 - 2030</p>
+            </div>
 
-            <br>
-
-            <p><b>SMA Negeri 1 Karanganyar</b></p>
-            <p>Ilmu Pengetahuan Alam dan Ekonomi (Kurikulum Merdeka)</p>
-            <p>2023 - 2026</p>
+            <div class="pendidikan-item">
+                <p class="institusi"><b>SMA Negeri 1 Karanganyar</b></p>
+                <p>Ilmu Pengetahuan Alam dan Ekonomi (Kurikulum Merdeka)</p>
+                <p class="tahun">2023 - 2026</p>
+            </div>
         </section>
 
         <!-- 4. SKILL -->
-        <section>
+        <section id="skill">
             <h2>Skill / Kemampuan</h2>
 
             <p><b>Hard Skill</b></p>
             <div class="skill">
-                <span>Pemrograman Python Fundamental</span>
-                <span>Kalibrasi Alat Ukur Listrik (Dasar)</span>
-                <span>Dokumen Teknis / LaTeX (Dasar)</span>
+                <span>Canva</span>
+                <span>Microsoft Word</span>
+                <span>Microsoft Excel</span>
+                <span>CapCut</span>
             </div>
 
             <br>
@@ -184,54 +474,85 @@
                 <span>Kepemimpinan</span>
                 <span>Koordinasi Tim</span>
                 <span>Manajemen Acara </span>
-                <span>Negosiasi & Persuasi</span>
+                <span>Negosiasi &amp; Persuasi</span>
                 <span>Manajemen Waktu</span>
             </div>
         </section>
 
-        <!-- 5. PROYEK -->
-        <section>
+        <!-- 5. PENGALAMAN ORGANISASI DAN KEPANITIAAN -->
+        <section id="organisasi">
             <h2>Pengalaman Organisasi dan Kepanitiaan</h2>
 
             <div class="proyek">
                 <img src="proyek1.jpg" alt="Foto Proyek">
 
-                <p><b>Penanggung Jawab (PIC) LCC Madya | Frostity#7 </b></p>
+                <p class="judul-proyek"><b>Penanggung Jawab (PIC) LCC Madya | Frosity#7 </b></p>
                 <p>
                     Mengoordinasikan panitia penyelenggara untuk kompetisi kuis tingkat sekolah menengah pertama, dan memastikan keberhasilan acara tersebut yang diikuti oleh 20 tim dari wilayah Keresidenan Surakarta, serta enyusun rencana untuk kategori kompetisi dan mengoordinasikan pembagian tugas di antara anggota tim secara efektif.
                 </p>
             </div>
 
-            <br>
+            <hr class="pemisah">
 
             <div class="proyek">
                 <img src="proyekb.jpg" alt="Foto Proyek">
                 <img src="proyekc.jpg" alt="Foto Proyek">
-            <p><b>Staf Sponsor| Frosity#7</b></p>
-            <p>
-                Berhasil memperoleh pendanaan dari 26 sponsor bisnis lokal serta mendorong penjualan merchandise hingga melampaui target awal, sehingga tujuan keuangan acara tersebut dapat tercapai.
-            </p>
+
+                <p class="judul-proyek"><b>Staf Sponsor| Frosity#7</b></p>
+                <p>
+                    Berhasil memperoleh pendanaan dari 26 sponsor bisnis lokal serta mendorong penjualan merchandise hingga melampaui target awal, sehingga tujuan keuangan acara tersebut dapat tercapai.
+                </p>
             </div>
 
-            <br>
+            <hr class="pemisah">
 
-            <p><b>Divisi Pendidikan dan Pengembangan | PMR WIRA SMAN 1 Karanganyar</b></p>
-            <p>
-                Menyelenggarakan sesi pelatihan pertolongan pertama secara rutin bagi lebih dari 50 anggota PMR Wira dan merancang program pelatihan mingguan untuk meningkatkan keterampilan praktis para anggota secara efektif.
-            </p>
+            <div class="proyek">
+                <p class="judul-proyek"><b>Divisi Pendidikan dan Pengembangan | PMR WIRA SMAN 1 Karanganyar</b></p>
+                <p>
+                    Menyelenggarakan sesi pelatihan pertolongan pertama secara rutin bagi lebih dari 50 anggota PMR Wira dan merancang program pelatihan mingguan untuk meningkatkan keterampilan praktis para anggota secara efektif.
+                </p>
+            </div>
+
+            <hr class="pemisah">
+
+            <div class="proyek">
+                <p class="judul-proyek"><b>Pengalaman Administrasi & Kesekretariatan</b></p>
+                <p>
+                    Berpengalaman sebagai Sekretaris dalam berbagai kepanitiaan tingkat SMA, yaitu Diklatsar Organisasi, Perwira Peduli, dan program kerja lainnya. Serta di perkuliahan pernah menjadi sekretaris di program kerta Action Plan. Bertanggung jawab penuh atas manajemen administrasi harian, mulai dari penyusunan proposal, pengelolaan surat-menyurat resmi, hingga pembuatan Laporan Pertanggungjawaban (LPJ). Serta mahir dalam menyusun notulensi rapat yang akurat.
+                </p>
+            </div>
         </section>
 
-        <section>
-            <h2>Hal yang sedang dipelajari</h2>
-            <p><b>Pembelajaran Praktis Pemrograman Python dan Praktikum Kelistrikan</b></p>
-            <p>
-                Di semester pertama, saya sedang belajar membuat program-program sederhana menggunakan Python untuk menyelesaikan tugas kuliah. Selain itu, saya juga mengikuti praktikum di laboratorium untuk belajar cara mengukur arus dan tegangan listrik serta memahami dasar-dasar kalibrasi alat ukur.
-            </p>
+        <!-- 6. PROYEK -->
+        <section id="proyek">
+            <h2>Proyek</h2>
+
+            <!-- POIN PROYEK TAMBAHAN -->
+    <ol class="daftar-poin-proyek">
+        <li>
+            <b>Menyusunan Administrasi Dokumen</b>
+            <p>Menyusun proposal resmi, laporan pertanggungjawaban, daftar hadir, dan surat-surat perizinan yang diperlukan pada program kerja organisasi dengan menggunakan Microsoft Word.</p>
+        </li>
+
+        <li>
+            <b>Rekapitulasi Data</b>
+            <p>Mengelola dan mengurutkan nilai dalam suatu perlombaan, serta membuat tabel dan grafik pada tugas sekolah menggunakan Microsoft Excel.</p>
+        </li>
+
+        <li>
+            <b>Desain Presentasi dan Poster</b>
+            <p>Merancang poster kreatif dan materi presentasi (PPT) menggunakan Canva.</p>
+        </li>
+
+        <li>
+            <b>Membuat vidio</b>
+            <p>Memotong dan mengedit vidio dengan transisi dasar menggunakan CapCut.</p>
+        </li>
+    </ol>
         </section>
 
-
-        <!-- 6. KONTAK -->
-        <section>
+        <!-- 7. KONTAK -->
+        <section id="kontak">
             <h2>Kontak</h2>
 
             <p>Email:
@@ -241,21 +562,26 @@
             </p>
 
             <p>LinkedIn:
-                <a href="https://www.linkedin.com/in/chita-ovita-0a6409437" target="_blank">
-                    Profil LinkedIn
+                <a href="https://www.linkedin.com/in/chita-ovita-0a6409437" target="_blank" rel="noopener noreferrer">
+                    LinkedIn Chita Ovita
                 </a>
             </p>
 
             <p>Instagram:
-                <a href="https://instagram.com" target="_blank">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                     @ovitachita
                 </a>
             </p>
         </section>
 
+        <!-- TOMBOL KEMBALI KE ATAS -->
+        <a class="kembali-atas" href="#beranda">
+            ↑ Kembali ke Atas
+        </a>
+
     </main>
 
-    <!-- 7. FOOTER -->
+    <!-- 8. FOOTER -->
     <footer>
         <p>&copy; 2026 Nama Lengkap Anda</p>
     </footer>
